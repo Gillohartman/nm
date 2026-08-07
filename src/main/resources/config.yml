@@ -1,0 +1,22 @@
+# ===== MegaHoppers configuration =====
+
+hoppers:
+  enabled: true
+  # Items moved per vanilla transfer cycle. Vanilla moves 1; 16 = 16x throughput.
+  # (Cadence stays on vanilla's normal schedule, so items are never lost or duplicated.)
+  multiplier: 16
+  # Keep vanilla furnace slot rules:
+  #  - hopper below a furnace only pulls the FINISHED product (never fuel/input)
+  #  - hopper on TOP feeds the input (smelting) slot, never the output
+  #  - hopper on the SIDE feeds the fuel slot (fuel items only)
+  enforce-furnace-slots: true
+  # Worlds where the booster is disabled (case-insensitive names).
+  disabled-worlds: []
+
+chunkloader:
+  enabled: true
+  # Two hoppers facing INTO each other with redstone dust inside force-load their chunk.
+  # Set false to make any facing pair a chunkloader (no redstone needed).
+  require-redstone: true
+  # How often (in ticks) active chunkloaders are re-checked for validity.
+  validate-interval-ticks: 40
